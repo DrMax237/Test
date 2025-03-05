@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_bang",
+    "texture": "8019824e-856c-4fc7-85f7-1d490389c31d",
+    "atlas": "",
+    "rect": [
+      35,
+      68,
+      966,
+      359
+    ],
+    "offset": [
+      6,
+      8.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "clouds_blury_x256",
+    "texture": "1b1e55bd-fdcf-4bd8-914c-e559222f5508",
+    "atlas": "",
+    "rect": [
+      1,
+      3,
+      510,
+      509
+    ],
+    "offset": [
+      0,
+      -1.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

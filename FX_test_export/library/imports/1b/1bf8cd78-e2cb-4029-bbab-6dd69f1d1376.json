@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "TS_Banner_1_Amazon_900x1600",
+    "texture": "afe3a792-3b1f-42a6-af51-eecfe51f6bc9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      900,
+      1600
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      900,
+      1600
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

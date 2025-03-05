@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "bubble_HB_x512",
+    "texture": "122c4c1a-b98d-4343-a526-3793eecb7bb6",
+    "atlas": "",
+    "rect": [
+      15,
+      16,
+      481,
+      240
+    ],
+    "offset": [
+      -0.5,
+      120
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

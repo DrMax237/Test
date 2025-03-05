@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "smoke_10",
+    "texture": "da180499-2955-4ad0-92f1-5b4e703a6f5a",
+    "atlas": "",
+    "rect": [
+      57,
+      43,
+      400,
+      403
+    ],
+    "offset": [
+      1,
+      11.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

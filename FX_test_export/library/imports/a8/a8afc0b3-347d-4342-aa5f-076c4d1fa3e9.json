@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "skull_x512",
+    "texture": "db09de8f-88a8-4b92-b521-b9920a8536f7",
+    "atlas": "",
+    "rect": [
+      82,
+      84,
+      348,
+      345
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "974f6e78-4288-4e09-88c7-97f5f76f0851",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1024,
+  "height": 1024,
+  "platformSettings": {},
+  "subMetas": {
+    "TCP2_Demo_LavaCartoon": {
+      "ver": "1.0.4",
+      "uuid": "9623ea83-808f-432c-ab38-f9c52f8cf07c",
+      "rawTextureUuid": "974f6e78-4288-4e09-88c7-97f5f76f0851",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1024,
+      "height": 1024,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

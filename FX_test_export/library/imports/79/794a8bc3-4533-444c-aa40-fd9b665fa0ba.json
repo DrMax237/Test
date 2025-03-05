@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_spikybomb",
+    "texture": "9aa52182-73ea-4284-aa17-3ed5ce8c1b92",
+    "atlas": "",
+    "rect": [
+      27,
+      27,
+      462,
+      466
+    ],
+    "offset": [
+      2,
+      -4
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

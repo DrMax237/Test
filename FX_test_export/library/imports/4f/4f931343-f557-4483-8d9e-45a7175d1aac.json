@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_magic_softshadow",
+    "texture": "bd8e615d-408b-4dd6-bf95-0c17eb7e2902",
+    "atlas": "",
+    "rect": [
+      22,
+      10,
+      472,
+      491
+    ],
+    "offset": [
+      2,
+      0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

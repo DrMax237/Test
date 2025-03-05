@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "twirl_02",
+    "texture": "2598a202-e9ad-42a2-ba9c-bfea6fab7de7",
+    "atlas": "",
+    "rect": [
+      9,
+      1,
+      503,
+      509
+    ],
+    "offset": [
+      4.5,
+      0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

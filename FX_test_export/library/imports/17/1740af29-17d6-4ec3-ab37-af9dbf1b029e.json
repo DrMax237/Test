@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cube_T_x256",
+    "texture": "5fa7b2f2-0d85-4582-886a-5269c5c72305",
+    "atlas": "",
+    "rect": [
+      11,
+      13,
+      234,
+      230
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_FxCircleGradient",
+    "texture": "be00f1b1-6deb-4426-a61d-b4c8e09a757b",
+    "atlas": "",
+    "rect": [
+      6,
+      6,
+      500,
+      500
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

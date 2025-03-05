@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "spark_05_rotated",
+    "texture": "9d31c47f-43c4-4a1c-95f8-8c0a96a42882",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      512,
+      403
+    ],
+    "offset": [
+      0,
+      54.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

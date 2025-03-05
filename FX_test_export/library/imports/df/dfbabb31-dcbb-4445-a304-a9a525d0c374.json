@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "portal_ring_twisty2",
+    "texture": "75a79389-1048-47a9-aa40-41307deaee33",
+    "atlas": "",
+    "rect": [
+      9,
+      9,
+      495,
+      495
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

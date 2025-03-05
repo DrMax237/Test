@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_water_x512",
+    "texture": "12a7ce52-91c6-49ee-ac8d-31e26223d3d1",
+    "atlas": "",
+    "rect": [
+      13,
+      14,
+      486,
+      481
+    ],
+    "offset": [
+      0,
+      1.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

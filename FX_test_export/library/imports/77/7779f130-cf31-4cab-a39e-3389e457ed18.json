@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_FxFlashLarge_01",
+    "texture": "a57b2e26-b2a2-4b2d-9e9c-30da86b995b3",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      256,
+      255
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

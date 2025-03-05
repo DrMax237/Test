@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_TrailSoft",
+    "texture": "d601f776-f14b-4413-9003-367e59188190",
+    "atlas": "",
+    "rect": [
+      9,
+      4,
+      240,
+      247
+    ],
+    "offset": [
+      1,
+      0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "flame_06_rotated",
+    "texture": "a291428a-8636-4803-af95-67d6497badfb",
+    "atlas": "",
+    "rect": [
+      75,
+      0,
+      363,
+      324
+    ],
+    "offset": [
+      0.5,
+      94
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

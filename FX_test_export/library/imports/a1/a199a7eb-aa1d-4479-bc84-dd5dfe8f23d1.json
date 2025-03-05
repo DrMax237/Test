@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_cross_B_x256",
+    "texture": "73c2881c-394a-48cf-920d-27708856c482",
+    "atlas": "",
+    "rect": [
+      15,
+      15,
+      228,
+      227
+    ],
+    "offset": [
+      1,
+      -0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

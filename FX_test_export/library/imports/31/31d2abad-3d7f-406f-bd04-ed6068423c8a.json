@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fire_soft_spiky",
+    "texture": "cfbb6636-32c9-4ea9-91e4-91fd79bc2357",
+    "atlas": "",
+    "rect": [
+      69,
+      98,
+      872,
+      847
+    ],
+    "offset": [
+      -7,
+      -9.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

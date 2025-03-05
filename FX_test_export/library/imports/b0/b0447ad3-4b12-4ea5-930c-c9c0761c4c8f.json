@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "b_mediator",
+    "texture": "75e41dd3-7598-44c8-89cb-7b89e6486ce9",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      126,
+      121
+    ],
+    "offset": [
+      -1,
+      2.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

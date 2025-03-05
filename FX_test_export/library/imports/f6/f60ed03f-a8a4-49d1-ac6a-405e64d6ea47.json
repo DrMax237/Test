@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_dot_x256",
+    "texture": "4aa67efc-ec05-44a5-ba9a-3b290e8a4682",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      253,
+      254
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

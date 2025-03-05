@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lightbolt_x512",
+    "texture": "3d56bba5-38d6-4efd-9120-87da73616bcf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      512,
+      170
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      170
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

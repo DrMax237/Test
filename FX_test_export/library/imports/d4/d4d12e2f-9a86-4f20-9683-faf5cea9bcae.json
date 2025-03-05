@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "spark_B2_x64",
+    "texture": "b5239abb-173d-4b07-870e-ce863f06500b",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      53,
+      53
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      55,
+      55
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

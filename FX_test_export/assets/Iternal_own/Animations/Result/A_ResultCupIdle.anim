@@ -1,0 +1,83 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "A_ResultCupIdle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2,
+  "sample": 60,
+  "speed": 0.7,
+  "wrapMode": 2,
+  "curveData": {
+    "paths": {
+      "T_StarGlow": {
+        "props": {
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 2,
+              "value": -45
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0.743,
+                "y": 0.743
+              },
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0.805,
+                "y": 0.805
+              },
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 2,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0.743,
+                "y": 0.743
+              }
+            }
+          ]
+        }
+      },
+      "T_Shine": {
+        "comps": {},
+        "props": {
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0,
+              "curve": "sineOut"
+            },
+            {
+              "frame": 0.5,
+              "value": 7,
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 1.5,
+              "value": -7,
+              "curve": "sineIn"
+            },
+            {
+              "frame": 2,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

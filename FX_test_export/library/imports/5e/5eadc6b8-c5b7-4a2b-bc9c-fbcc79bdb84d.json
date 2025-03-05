@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "portal_soft02",
+    "texture": "ac6592e8-be9c-433f-8485-7071b425117c",
+    "atlas": "",
+    "rect": [
+      1,
+      5,
+      1014,
+      1008
+    ],
+    "offset": [
+      -4,
+      3
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

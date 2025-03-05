@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_electric_x128",
+    "texture": "ceafa1de-62bc-4342-b29d-e4093b057b45",
+    "atlas": "",
+    "rect": [
+      1,
+      2,
+      125,
+      123
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

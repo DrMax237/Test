@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Amazon_A_900x1600",
+    "texture": "1c396d0b-7c2d-444e-b9c7-9e64586729aa",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      900,
+      1600
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      900,
+      1600
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

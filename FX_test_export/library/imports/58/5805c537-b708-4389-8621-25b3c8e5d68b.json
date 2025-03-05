@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "circle_BD_x128",
+    "texture": "9b6de12e-c30b-48aa-abad-5879b4c97d77",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      128,
+      125
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

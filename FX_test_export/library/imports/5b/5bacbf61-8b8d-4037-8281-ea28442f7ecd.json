@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_sparkle",
+    "texture": "f17dba68-6e2a-41de-b3dd-17a9fe0395ac",
+    "atlas": "",
+    "rect": [
+      61,
+      94,
+      908,
+      304
+    ],
+    "offset": [
+      3,
+      10
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

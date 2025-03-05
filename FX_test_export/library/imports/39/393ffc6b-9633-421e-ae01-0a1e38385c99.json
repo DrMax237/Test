@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.Material",
+  "_name": "M_ColdHalfSprak_A",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "829a282c-b049-4019-bd38-5ace8d8a6417"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {},
+      "props": {
+        "mainTexture": {
+          "__uuid__": "049d8a01-264e-4ddd-8875-79b99759f6fb"
+        },
+        "tintColor": {
+          "__type__": "cc.Color",
+          "r": 127,
+          "g": 127,
+          "b": 127,
+          "a": 127
+        }
+      }
+    }
+  }
+}

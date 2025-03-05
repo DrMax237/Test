@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DustMote",
+    "texture": "9f2aad37-f82a-496c-9ca2-99e063a10026",
+    "atlas": "",
+    "rect": [
+      16,
+      21,
+      223,
+      223
+    ],
+    "offset": [
+      -0.5,
+      -4.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "spot_2_x128",
+    "texture": "2cee4420-1060-40c7-93bd-933a5bb80fb1",
+    "atlas": "",
+    "rect": [
+      3,
+      14,
+      122,
+      100
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

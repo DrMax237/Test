@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "5841ee81-ef45-4239-b637-ab2ec52376fb",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 512,
+  "height": 512,
+  "platformSettings": {},
+  "subMetas": {
+    "T_Logo_PirateRaid": {
+      "ver": "1.0.4",
+      "uuid": "49abaae5-865a-4470-a379-8df4c51664c8",
+      "rawTextureUuid": "5841ee81-ef45-4239-b637-ab2ec52376fb",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 22,
+      "trimX": 10,
+      "trimY": 23,
+      "width": 492,
+      "height": 422,
+      "rawWidth": 512,
+      "rawHeight": 512,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

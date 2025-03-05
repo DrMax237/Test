@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "muzzleflash01",
+    "texture": "9229b0da-2a21-457b-8ecb-4b2ce17751ec",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1024,
+      1000
+    ],
+    "offset": [
+      0,
+      12
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

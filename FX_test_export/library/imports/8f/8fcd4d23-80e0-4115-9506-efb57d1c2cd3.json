@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_ka-pow",
+    "texture": "0241b4c3-b3f5-470c-b717-575942b3df0b",
+    "atlas": "",
+    "rect": [
+      33,
+      62,
+      944,
+      405
+    ],
+    "offset": [
+      -7,
+      -8.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

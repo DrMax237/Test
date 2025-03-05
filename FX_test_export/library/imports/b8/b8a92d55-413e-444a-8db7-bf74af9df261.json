@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "DustPuffSmall",
+    "texture": "e9b77912-f182-4651-9f0b-0bc0dd2ca06f",
+    "atlas": "",
+    "rect": [
+      4,
+      0,
+      245,
+      256
+    ],
+    "offset": [
+      -1.5,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

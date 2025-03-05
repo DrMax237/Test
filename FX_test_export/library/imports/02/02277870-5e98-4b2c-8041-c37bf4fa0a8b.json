@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hex_ring_BP_x256",
+    "texture": "39d546eb-9a22-4f63-8281-bdcb8adaed81",
+    "atlas": "",
+    "rect": [
+      7,
+      52,
+      198,
+      95
+    ],
+    "offset": [
+      0,
+      -3.5
+    ],
+    "originalSize": [
+      212,
+      192
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

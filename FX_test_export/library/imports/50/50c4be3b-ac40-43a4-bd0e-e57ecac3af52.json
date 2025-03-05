@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lightray1",
+    "texture": "13c8351d-df8a-45d4-ad8f-156131bbc617",
+    "atlas": "",
+    "rect": [
+      0,
+      22,
+      1016,
+      211
+    ],
+    "offset": [
+      -4,
+      0.5
+    ],
+    "originalSize": [
+      1024,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

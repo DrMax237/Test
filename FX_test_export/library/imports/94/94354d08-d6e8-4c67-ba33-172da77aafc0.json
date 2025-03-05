@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coins_outline",
+    "texture": "6478bb58-de5e-46c5-b68a-fff23056e09b",
+    "atlas": "",
+    "rect": [
+      24,
+      24,
+      199,
+      207
+    ],
+    "offset": [
+      -4.5,
+      0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

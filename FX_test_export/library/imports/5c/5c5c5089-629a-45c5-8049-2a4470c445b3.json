@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "aura_punch",
+    "texture": "bdf41cd4-d524-44f9-b89c-569799b8e6c2",
+    "atlas": "",
+    "rect": [
+      0,
+      39,
+      256,
+      203
+    ],
+    "offset": [
+      0,
+      -12.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

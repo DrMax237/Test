@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.Material",
+  "_name": "a_coil_explosion_1_oa",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "829a282c-b049-4019-bd38-5ace8d8a6417"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {},
+      "props": {
+        "mainTexture": {
+          "__uuid__": "d30eed29-456c-4562-842a-f2fb63fb9819"
+        },
+        "mainTiling_Offset": {
+          "__type__": "cc.Vec4",
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "w": 0
+        }
+      }
+    }
+  }
+}

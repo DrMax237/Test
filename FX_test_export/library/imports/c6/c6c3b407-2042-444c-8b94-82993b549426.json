@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Projectile",
+    "texture": "1aef8e34-4d67-40b1-be81-5abc37188f17",
+    "atlas": "",
+    "rect": [
+      0,
+      28,
+      2048,
+      1901
+    ],
+    "offset": [
+      0,
+      45.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

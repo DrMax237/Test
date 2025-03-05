@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_explosion_N_x128",
+    "texture": "c791f14b-b835-4674-9287-f492edb135dd",
+    "atlas": "",
+    "rect": [
+      2,
+      4,
+      97,
+      93
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      100,
+      100
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

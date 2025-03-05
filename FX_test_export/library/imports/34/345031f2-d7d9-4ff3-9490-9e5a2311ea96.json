@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_shield",
+    "texture": "2de909db-71f0-4998-8184-04e2bfb0d052",
+    "atlas": "",
+    "rect": [
+      104,
+      79,
+      304,
+      354
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

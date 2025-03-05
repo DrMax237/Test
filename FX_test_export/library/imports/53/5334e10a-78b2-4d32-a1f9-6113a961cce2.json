@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "square_ring_BN_x128",
+    "texture": "61bc12bc-1cd9-44f5-a979-621fa9b1ec09",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      159,
+      159
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      162,
+      162
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

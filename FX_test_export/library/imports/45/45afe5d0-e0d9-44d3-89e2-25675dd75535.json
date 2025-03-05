@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Handle_Ridged",
+    "texture": "9be54721-8cb4-43e8-aa4c-c5462c34b4a8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      257,
+      256
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      257,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

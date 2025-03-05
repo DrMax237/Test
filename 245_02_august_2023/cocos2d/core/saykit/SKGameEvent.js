@@ -1,0 +1,13 @@
+const SKGameEvent = {
+	NONE: 'NONE',
+	INPUT: 'INPUT',
+	FIRST_TAP: 'FIRST_TAP',
+	REDIRECT: 'REDIRECT',
+
+	ADD_ITEM: 'ADD_ITEM',
+	GET_ITEM_VALUE: 'GET_ITEM_VALUE',
+	GET_ITEM: 'GET_ITEM',
+	CHANGE_ITEM_VALUE: 'CHANGE_ITEM_VALUE',
+};
+
+saykit.GameEvent = module.exports = SKGameEvent;

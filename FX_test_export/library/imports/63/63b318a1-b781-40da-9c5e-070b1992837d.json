@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "portal_stripes_purple",
+    "texture": "9f37f548-2132-4921-974e-69034b3428c0",
+    "atlas": "",
+    "rect": [
+      31,
+      20,
+      974,
+      980
+    ],
+    "offset": [
+      6,
+      2
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

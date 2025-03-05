@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_Button_01_Violet",
+    "texture": "e75f4102-ca51-41cc-946f-25d649e1311c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      42,
+      112
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      42,
+      112
+    ],
+    "capInsets": [
+      21,
+      56,
+      21,
+      56
+    ]
+  }
+}

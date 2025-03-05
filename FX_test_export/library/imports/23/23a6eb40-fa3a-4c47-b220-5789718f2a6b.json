@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_Button_03_Purpur",
+    "texture": "24411c5f-72d3-43db-9b39-27fb0841e450",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      143,
+      251
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      145,
+      254
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

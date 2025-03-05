@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_clean_1",
+    "texture": "27587db2-145b-41f2-9909-09f0ec82da6b",
+    "atlas": "",
+    "rect": [
+      18,
+      17,
+      479,
+      479
+    ],
+    "offset": [
+      1.5,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

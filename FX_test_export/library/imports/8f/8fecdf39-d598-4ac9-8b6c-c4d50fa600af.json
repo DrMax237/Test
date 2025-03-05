@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_star",
+    "texture": "7de3ad7f-6d70-40f2-8199-d4607632abbc",
+    "atlas": "",
+    "rect": [
+      55,
+      64,
+      401,
+      384
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

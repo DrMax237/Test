@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "shield_magic",
+    "texture": "5c30a71c-8ca6-4ba2-9d81-da6af25f6dd7",
+    "atlas": "",
+    "rect": [
+      0,
+      93,
+      1024,
+      828
+    ],
+    "offset": [
+      0,
+      5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

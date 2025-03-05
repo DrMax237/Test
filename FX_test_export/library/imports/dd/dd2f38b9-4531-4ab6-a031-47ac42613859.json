@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_vacum_x512",
+    "texture": "09326ec2-bb46-415e-baf4-980da39aa68c",
+    "atlas": "",
+    "rect": [
+      21,
+      21,
+      472,
+      470
+    ],
+    "offset": [
+      1,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

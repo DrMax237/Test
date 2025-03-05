@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ripple",
+    "texture": "114416fe-a9c8-4d93-8c57-09c54a41f977",
+    "atlas": "",
+    "rect": [
+      12,
+      21,
+      227,
+      86
+    ],
+    "offset": [
+      -2.5,
+      0
+    ],
+    "originalSize": [
+      256,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "explosion_sharp_flat_3x3",
+    "texture": "78c90473-2647-48a2-ba56-98e5e56c3b4f",
+    "atlas": "",
+    "rect": [
+      2,
+      37,
+      1943,
+      934
+    ],
+    "offset": [
+      -50.5,
+      8
+    ],
+    "originalSize": [
+      2048,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

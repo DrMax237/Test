@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "skull_evil",
+    "texture": "0bebac24-5ea7-4e4d-813c-ab211733d7a4",
+    "atlas": "",
+    "rect": [
+      63,
+      65,
+      385,
+      395
+    ],
+    "offset": [
+      -0.5,
+      -6.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

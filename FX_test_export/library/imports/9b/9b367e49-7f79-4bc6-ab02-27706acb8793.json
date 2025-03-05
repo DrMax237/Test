@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_flame_ST_x128",
+    "texture": "01640926-8d82-4dd4-888a-0abf1674b042",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      127,
+      128
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

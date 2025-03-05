@@ -1,0 +1,2 @@
+# cocos-creator-resize
+

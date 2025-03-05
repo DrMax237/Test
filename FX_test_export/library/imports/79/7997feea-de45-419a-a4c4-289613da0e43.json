@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "PuffCloud",
+    "texture": "b8b9a044-14e0-4d7a-bb2e-d5af53cfe892",
+    "atlas": "",
+    "rect": [
+      17,
+      26,
+      212,
+      210
+    ],
+    "offset": [
+      -5,
+      -3
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

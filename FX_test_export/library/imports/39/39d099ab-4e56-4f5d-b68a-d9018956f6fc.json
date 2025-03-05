@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_blam",
+    "texture": "ae25bc4c-33a4-408f-91a4-35bd93d676af",
+    "atlas": "",
+    "rect": [
+      164,
+      32,
+      708,
+      422
+    ],
+    "offset": [
+      6,
+      13
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

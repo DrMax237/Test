@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "slash_soft",
+    "texture": "3aa31498-4cd0-4746-bc7f-61498aa7fe13",
+    "atlas": "",
+    "rect": [
+      7,
+      38,
+      2015,
+      985
+    ],
+    "offset": [
+      -9.5,
+      -18.5
+    ],
+    "originalSize": [
+      2048,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

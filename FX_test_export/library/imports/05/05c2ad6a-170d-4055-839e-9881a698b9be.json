@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_wow",
+    "texture": "2a8ff41d-22c7-4fc8-b983-3f8b7f7af3d0",
+    "atlas": "",
+    "rect": [
+      16,
+      70,
+      993,
+      380
+    ],
+    "offset": [
+      0.5,
+      -4
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

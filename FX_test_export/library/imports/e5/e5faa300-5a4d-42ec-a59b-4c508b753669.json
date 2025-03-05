@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "doom_x256",
+    "texture": "6bf0b93f-0ce2-4207-9a23-e60af0ded27b",
+    "atlas": "",
+    "rect": [
+      45,
+      50,
+      167,
+      147
+    ],
+    "offset": [
+      0.5,
+      4.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
