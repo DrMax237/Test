@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_punch",
+    "texture": "916538e4-fc79-4dcd-8a9b-a2469cda6226",
+    "atlas": "",
+    "rect": [
+      129,
+      61,
+      758,
+      370
+    ],
+    "offset": [
+      -4,
+      10
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_heart",
+    "texture": "2f6075c3-88f0-47a2-80ad-a11a71bacd59",
+    "atlas": "",
+    "rect": [
+      42,
+      103,
+      433,
+      338
+    ],
+    "offset": [
+      2.5,
+      -16
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

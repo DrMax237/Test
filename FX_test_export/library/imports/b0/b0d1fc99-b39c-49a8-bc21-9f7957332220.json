@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "candle_blurry",
+    "texture": "c1e68ae3-f261-496c-9fe9-0c274f2840d1",
+    "atlas": "",
+    "rect": [
+      32,
+      2,
+      448,
+      499
+    ],
+    "offset": [
+      0,
+      4.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "magic_05",
+    "texture": "068fb84c-eea1-437d-8309-dc082381ebe3",
+    "atlas": "",
+    "rect": [
+      16,
+      0,
+      480,
+      500
+    ],
+    "offset": [
+      0,
+      6
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

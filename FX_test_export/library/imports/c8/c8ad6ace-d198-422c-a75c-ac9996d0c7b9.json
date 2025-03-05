@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "text_haha",
+    "texture": "9277d714-a6e2-4dec-b2a4-e2d3069a79df",
+    "atlas": "",
+    "rect": [
+      10,
+      47,
+      485,
+      425
+    ],
+    "offset": [
+      -3.5,
+      -3.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

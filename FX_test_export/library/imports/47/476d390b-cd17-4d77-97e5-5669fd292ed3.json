@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wave_soft",
+    "texture": "c8d50c0f-fa5f-4bcc-8ba3-3b7212ed73cb",
+    "atlas": "",
+    "rect": [
+      26,
+      1,
+      484,
+      477
+    ],
+    "offset": [
+      12,
+      16.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_skull",
+    "texture": "2df1533f-569a-4f81-ab36-7522dc458b31",
+    "atlas": "",
+    "rect": [
+      63,
+      65,
+      386,
+      383
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

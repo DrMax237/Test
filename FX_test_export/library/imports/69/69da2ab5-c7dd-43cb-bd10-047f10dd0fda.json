@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lightning_spikes_3x1",
+    "texture": "4267b33a-c121-42cf-a85e-f3cf4ea9ce1b",
+    "atlas": "",
+    "rect": [
+      26,
+      36,
+      486,
+      450
+    ],
+    "offset": [
+      13,
+      -5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

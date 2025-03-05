@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "GlowRays",
+    "texture": "8eb329ed-12de-4448-9adc-06e8c33e0168",
+    "atlas": "",
+    "rect": [
+      13,
+      11,
+      232,
+      233
+    ],
+    "offset": [
+      1,
+      0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

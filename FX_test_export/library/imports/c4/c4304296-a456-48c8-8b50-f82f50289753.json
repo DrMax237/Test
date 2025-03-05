@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "explosion_spike03",
+    "texture": "4593b572-aba9-4f0d-bdb0-e16e214b94c2",
+    "atlas": "",
+    "rect": [
+      0,
+      40,
+      976,
+      984
+    ],
+    "offset": [
+      -24,
+      -20
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_bullet",
+    "texture": "f2f3f851-741e-400a-9e96-2f8f3fe4a723",
+    "atlas": "",
+    "rect": [
+      75,
+      79,
+      364,
+      365
+    ],
+    "offset": [
+      1,
+      -5.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

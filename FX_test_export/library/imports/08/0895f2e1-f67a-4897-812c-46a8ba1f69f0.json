@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_fire2",
+    "texture": "727e9db1-79ab-4cb6-8cdc-9570cff27bff",
+    "atlas": "",
+    "rect": [
+      55,
+      48,
+      431,
+      423
+    ],
+    "offset": [
+      14.5,
+      -3.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_smooch",
+    "texture": "0e675091-af44-484e-a0d0-49e8e98c1262",
+    "atlas": "",
+    "rect": [
+      52,
+      113,
+      931,
+      279
+    ],
+    "offset": [
+      5.5,
+      3.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

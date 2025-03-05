@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "circle_outlined",
+    "texture": "470d034f-f074-411d-825a-0c90b0f3f78f",
+    "atlas": "",
+    "rect": [
+      7,
+      9,
+      242,
+      242
+    ],
+    "offset": [
+      0,
+      -2
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

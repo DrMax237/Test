@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sparkle_round",
+    "texture": "c7026f40-cf9c-4c4d-9151-b0dea083c620",
+    "atlas": "",
+    "rect": [
+      7,
+      6,
+      242,
+      244
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

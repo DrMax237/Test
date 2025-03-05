@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "flare_01",
+    "texture": "ed986cda-35dc-48d6-8ec4-e19c4b036d2a",
+    "atlas": "",
+    "rect": [
+      73,
+      0,
+      434,
+      439
+    ],
+    "offset": [
+      34,
+      36.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_health",
+    "texture": "509cac60-4b11-4dd3-91bc-159933a8490e",
+    "atlas": "",
+    "rect": [
+      59,
+      59,
+      395,
+      395
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

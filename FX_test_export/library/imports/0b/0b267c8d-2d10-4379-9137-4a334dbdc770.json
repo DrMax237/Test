@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fire_soft_blank",
+    "texture": "a629a738-8407-4eea-90f1-9e370d4ec590",
+    "atlas": "",
+    "rect": [
+      73,
+      24,
+      914,
+      948
+    ],
+    "offset": [
+      18,
+      14
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

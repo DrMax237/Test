@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "splat00_flat_3x3",
+    "texture": "4040a37f-a9e3-40fd-934e-27ba6888c4af",
+    "atlas": "",
+    "rect": [
+      0,
+      52,
+      2043,
+      877
+    ],
+    "offset": [
+      -2.5,
+      21.5
+    ],
+    "originalSize": [
+      2048,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "magic_blast",
+    "texture": "5388b99e-29c3-4d9d-8333-0e797a707d99",
+    "atlas": "",
+    "rect": [
+      25,
+      11,
+      470,
+      486
+    ],
+    "offset": [
+      4,
+      2
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
