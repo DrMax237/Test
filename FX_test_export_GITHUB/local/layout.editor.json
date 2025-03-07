@@ -41,7 +41,7 @@
             "width": 517,
             "height": 1292,
             "type": "panel",
-            "active": 0,
+            "active": 1,
             "children": [
               "inspector",
               "console"

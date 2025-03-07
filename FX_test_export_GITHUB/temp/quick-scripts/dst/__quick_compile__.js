@@ -1,6 +1,6 @@
 
 (function () {
-var scripts = [{"deps":{"./assets/Scripts/Helper":1,"./assets/Iternal_own/Scripts/Ui/ResultSpineStar/ResultSpineStar":2,"./assets/Iternal_own/Scripts/Game/Dispersion/DispersionObject":3},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/Helper.js"},{"deps":{},"path":"preview-scripts/assets/Iternal_own/Scripts/Ui/ResultSpineStar/ResultSpineStar.js"},{"deps":{},"path":"preview-scripts/assets/Iternal_own/Scripts/Game/Dispersion/DispersionObject.js"}];
+var scripts = [{"deps":{"./assets/Scripts/Helper":1,"./assets/Iternal_own/Scripts/Game/Dispersion/DispersionObject":2,"./assets/Iternal_own/Scripts/Ui/ResultSpineStar/ResultSpineStar":3},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/Helper.js"},{"deps":{},"path":"preview-scripts/assets/Iternal_own/Scripts/Game/Dispersion/DispersionObject.js"},{"deps":{},"path":"preview-scripts/assets/Iternal_own/Scripts/Ui/ResultSpineStar/ResultSpineStar.js"}];
 var entries = ["preview-scripts/__qc_index__.js"];
 var bundleScript = 'preview-scripts/__qc_bundle__.js';
 
