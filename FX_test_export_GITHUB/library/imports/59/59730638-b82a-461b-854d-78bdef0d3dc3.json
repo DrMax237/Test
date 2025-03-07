@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_GrayscaleGradient",
+    "texture": "3d866ab1-2014-4981-a68f-0dc63ab8fc35",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      512,
+      4
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      4
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

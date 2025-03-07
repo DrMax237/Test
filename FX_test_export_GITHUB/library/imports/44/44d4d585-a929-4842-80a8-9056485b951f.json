@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "magic_orb",
+    "texture": "c7de7f64-3131-4e89-b7cc-5fe7298b0ea0",
+    "atlas": "",
+    "rect": [
+      36,
+      36,
+      441,
+      441
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

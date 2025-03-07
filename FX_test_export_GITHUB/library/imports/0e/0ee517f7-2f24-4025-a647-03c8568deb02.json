@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Rays_Try",
+    "texture": "c931a948-d731-4422-a5c3-39e811def0bc",
+    "atlas": "",
+    "rect": [
+      39,
+      54,
+      939,
+      899
+    ],
+    "offset": [
+      -3.5,
+      8.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

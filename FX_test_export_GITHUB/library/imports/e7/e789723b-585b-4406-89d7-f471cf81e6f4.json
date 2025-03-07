@@ -1,0 +1,54 @@
+{
+  "__type__": "cc.Model",
+  "_name": "SM_PolyConfetti",
+  "_objFlags": 0,
+  "_native": "",
+  "_nodes": [
+    {
+      "name": "RootNode",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "children": [
+        1
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quat": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "path": ""
+    },
+    {
+      "name": "PolyConfetti",
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "mesh": 0,
+      "parent": null,
+      "position": [
+        -0.111629754304886,
+        0,
+        0.00234584324061871
+      ],
+      "quat": [
+        -0.70710676908493,
+        0,
+        0,
+        0.70710676908493
+      ],
+      "path": "PolyConfetti"
+    }
+  ],
+  "_precomputeJointMatrix": false
+}

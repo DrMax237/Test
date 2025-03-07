@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "star_soft_4x4",
+    "texture": "16c5b9fb-45a2-4465-9dd1-05b9cd1ae817",
+    "atlas": "",
+    "rect": [
+      40,
+      49,
+      1967,
+      1950
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

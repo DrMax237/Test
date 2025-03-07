@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_Button_05_Green",
+    "texture": "a8cc7c15-30a9-4e94-95f5-60271feb2940",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      161,
+      164
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      161,
+      164
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

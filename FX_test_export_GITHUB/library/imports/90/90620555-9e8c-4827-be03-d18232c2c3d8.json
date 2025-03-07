@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sparkle2",
+    "texture": "611c859b-1a86-4ab2-bc9f-d7e6d0acf06a",
+    "atlas": "",
+    "rect": [
+      37,
+      14,
+      183,
+      225
+    ],
+    "offset": [
+      0.5,
+      1.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

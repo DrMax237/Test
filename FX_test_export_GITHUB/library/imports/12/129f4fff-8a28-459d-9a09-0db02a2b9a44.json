@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_exclamation",
+    "texture": "6de4369e-5712-455b-85df-84a60641ec6c",
+    "atlas": "",
+    "rect": [
+      183,
+      75,
+      146,
+      362
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

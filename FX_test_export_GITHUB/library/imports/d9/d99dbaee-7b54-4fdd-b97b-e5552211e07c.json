@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "HexagonFlat-Top",
+    "texture": "ab196159-623e-4bb3-96c1-3e38ef695703",
+    "atlas": "",
+    "rect": [
+      0,
+      15,
+      256,
+      226
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_smack",
+    "texture": "93a5ce2b-1418-4742-bd60-e00471363b47",
+    "atlas": "",
+    "rect": [
+      84,
+      43,
+      842,
+      398
+    ],
+    "offset": [
+      -7,
+      14
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

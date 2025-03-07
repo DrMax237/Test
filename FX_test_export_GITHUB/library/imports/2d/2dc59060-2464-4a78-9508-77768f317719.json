@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "CoilGlowB2l_x1024_ADDITIVE",
+    "texture": "f7331e34-e7d9-4e97-9a2a-e3ac86d75f82",
+    "atlas": "",
+    "rect": [
+      53,
+      38,
+      918,
+      947
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

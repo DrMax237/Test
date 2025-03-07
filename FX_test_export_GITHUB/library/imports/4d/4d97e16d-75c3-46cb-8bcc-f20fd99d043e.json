@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_miss",
+    "texture": "5dd8c1c3-4e95-46ff-98f2-7d7141ede8e0",
+    "atlas": "",
+    "rect": [
+      62,
+      53,
+      892,
+      392
+    ],
+    "offset": [
+      -4,
+      7
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Alpha 3",
+    "texture": "541caed7-37b6-4c19-96b2-b00aaf860a29",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      251,
+      256
+    ],
+    "offset": [
+      -2.5,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

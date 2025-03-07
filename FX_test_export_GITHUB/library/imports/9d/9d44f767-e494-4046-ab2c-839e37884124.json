@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_splat",
+    "texture": "61e5f8f9-a918-4165-b738-c3414e254071",
+    "atlas": "",
+    "rect": [
+      119,
+      70,
+      765,
+      387
+    ],
+    "offset": [
+      -10.5,
+      -7.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

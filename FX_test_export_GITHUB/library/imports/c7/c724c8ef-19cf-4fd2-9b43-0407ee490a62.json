@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "splat03_trsp_4x4",
+    "texture": "2da91846-30a0-40b6-a433-049a530a384a",
+    "atlas": "",
+    "rect": [
+      11,
+      9,
+      2020,
+      2027
+    ],
+    "offset": [
+      -3,
+      1.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

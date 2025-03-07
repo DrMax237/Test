@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_ko",
+    "texture": "55b32066-525e-42a5-b13a-41f03ba323d5",
+    "atlas": "",
+    "rect": [
+      311,
+      122,
+      450,
+      290
+    ],
+    "offset": [
+      24,
+      -11
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

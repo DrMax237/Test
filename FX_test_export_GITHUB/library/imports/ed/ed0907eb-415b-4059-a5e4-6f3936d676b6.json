@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "heart2broken_blue",
+    "texture": "f0dd127b-70f6-4e1a-b758-1607f7044f91",
+    "atlas": "",
+    "rect": [
+      1,
+      97,
+      498,
+      332
+    ],
+    "offset": [
+      -6,
+      -7
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "magic_runecircle",
+    "texture": "4e53a9eb-5004-4d67-8a3a-6f5b8940d556",
+    "atlas": "",
+    "rect": [
+      47,
+      47,
+      930,
+      930
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

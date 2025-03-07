@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "feather_outlined",
+    "texture": "b248e25f-2f7c-4c66-8013-3bea9718f2d0",
+    "atlas": "",
+    "rect": [
+      45,
+      23,
+      439,
+      212
+    ],
+    "offset": [
+      8.5,
+      -1
+    ],
+    "originalSize": [
+      512,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rays_B_x128",
+    "texture": "fbd9b7de-48c2-4bd0-be39-1c8f12dd1d17",
+    "atlas": "",
+    "rect": [
+      6,
+      6,
+      117,
+      117
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

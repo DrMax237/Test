@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "star_09",
+    "texture": "1dc46633-c55b-42a2-8497-f6bde8cefc4c",
+    "atlas": "",
+    "rect": [
+      39,
+      3,
+      434,
+      504
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

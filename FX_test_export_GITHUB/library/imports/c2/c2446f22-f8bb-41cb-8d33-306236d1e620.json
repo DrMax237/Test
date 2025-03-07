@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_PopupRound_GS",
+    "texture": "0358da28-8c3e-4770-b8b6-c5c076795c64",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      945,
+      216
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      945,
+      216
+    ],
+    "capInsets": [
+      66,
+      46,
+      66,
+      46
+    ]
+  }
+}

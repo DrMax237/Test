@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_Shine_3_512",
+    "texture": "ce306a81-2b4e-45c4-a2c0-ecf49669bf32",
+    "atlas": "",
+    "rect": [
+      13,
+      14,
+      228,
+      228
+    ],
+    "offset": [
+      -1,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_skates",
+    "texture": "0deae8be-f1c8-43ff-b411-dc00630bb4a1",
+    "atlas": "",
+    "rect": [
+      41,
+      48,
+      442,
+      431
+    ],
+    "offset": [
+      6,
+      -7.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

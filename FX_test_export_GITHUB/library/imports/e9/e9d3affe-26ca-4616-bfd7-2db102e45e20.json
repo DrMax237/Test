@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "HexagonPointed-Top",
+    "texture": "2ffc196f-4c0d-4605-bd87-414c8cd18db1",
+    "atlas": "",
+    "rect": [
+      15,
+      0,
+      226,
+      256
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

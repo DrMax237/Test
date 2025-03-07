@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_bolt",
+    "texture": "ae0bb1fb-6a2d-45c6-bb9e-295d1611d23d",
+    "atlas": "",
+    "rect": [
+      108,
+      66,
+      296,
+      379
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

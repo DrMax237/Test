@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "flame_particle_x64",
+    "texture": "b23643f9-0ca2-4625-91ef-834cfabf47f5",
+    "atlas": "",
+    "rect": [
+      16,
+      0,
+      58,
+      90
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      90,
+      90
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

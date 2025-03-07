@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "portal_glow",
+    "texture": "58b59556-535b-4181-b791-5fd40698faa7",
+    "atlas": "",
+    "rect": [
+      5,
+      7,
+      499,
+      496
+    ],
+    "offset": [
+      -1.5,
+      1
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

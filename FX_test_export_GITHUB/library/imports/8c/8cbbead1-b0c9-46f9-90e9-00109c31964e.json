@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "HealEffect2",
+    "texture": "b090eccf-f0f9-457c-94f9-cf969478b88c",
+    "atlas": "",
+    "rect": [
+      16,
+      35,
+      1971,
+      1971
+    ],
+    "offset": [
+      -22.5,
+      3.5
+    ],
+    "originalSize": [
+      2048,
+      2048
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

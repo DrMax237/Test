@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_magic_fluffy",
+    "texture": "58a6b427-e9d3-4bad-acc8-e49b4010634a",
+    "atlas": "",
+    "rect": [
+      7,
+      2,
+      502,
+      509
+    ],
+    "offset": [
+      2,
+      -0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

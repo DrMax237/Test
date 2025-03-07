@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "aura_soft01",
+    "texture": "5e2b645d-e079-4050-aa52-72ebbb1f5caa",
+    "atlas": "",
+    "rect": [
+      13,
+      17,
+      998,
+      992
+    ],
+    "offset": [
+      0,
+      -1
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

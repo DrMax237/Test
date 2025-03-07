@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_DTB_x512",
+    "texture": "37b024a7-d526-4477-8090-88120bda5777",
+    "atlas": "",
+    "rect": [
+      28,
+      45,
+      461,
+      442
+    ],
+    "offset": [
+      2.5,
+      -10
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

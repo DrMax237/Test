@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_blur",
+    "texture": "ac861153-3c50-4ec5-9ada-b90016eb72c5",
+    "atlas": "",
+    "rect": [
+      6,
+      4,
+      117,
+      121
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

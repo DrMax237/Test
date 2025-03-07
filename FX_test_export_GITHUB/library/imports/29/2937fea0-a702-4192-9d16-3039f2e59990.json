@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_crash",
+    "texture": "879bafde-3114-4b9d-8591-a9a3f498b394",
+    "atlas": "",
+    "rect": [
+      161,
+      87,
+      682,
+      322
+    ],
+    "offset": [
+      -10,
+      8
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_pop",
+    "texture": "63a0a9a2-9a91-4d06-8ba4-a135e9f4b9be",
+    "atlas": "",
+    "rect": [
+      169,
+      45,
+      720,
+      413
+    ],
+    "offset": [
+      17,
+      4.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

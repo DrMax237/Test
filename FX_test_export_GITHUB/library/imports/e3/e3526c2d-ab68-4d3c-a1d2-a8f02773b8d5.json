@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "coil_S2B_x512",
+    "texture": "c782a4df-e71d-4008-a947-ad08e41050e1",
+    "atlas": "",
+    "rect": [
+      14,
+      14,
+      484,
+      484
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

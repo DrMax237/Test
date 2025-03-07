@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_question",
+    "texture": "c18bf8e3-e7b9-4637-87c0-020220936972",
+    "atlas": "",
+    "rect": [
+      120,
+      72,
+      268,
+      366
+    ],
+    "offset": [
+      -2,
+      1
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

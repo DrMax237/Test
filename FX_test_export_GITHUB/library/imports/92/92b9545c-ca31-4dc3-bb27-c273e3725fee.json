@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rays_T3_x256",
+    "texture": "e9718261-481d-4725-be2a-910042957405",
+    "atlas": "",
+    "rect": [
+      0,
+      21,
+      512,
+      470
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_crack",
+    "texture": "d3f89f7b-883d-41b9-b0cd-f8ecc031f6e6",
+    "atlas": "",
+    "rect": [
+      88,
+      20,
+      843,
+      446
+    ],
+    "offset": [
+      -2.5,
+      13
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

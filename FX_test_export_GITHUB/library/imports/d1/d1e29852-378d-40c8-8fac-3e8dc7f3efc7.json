@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "explosion_round_outlined_3x3",
+    "texture": "1a1eb4f5-160c-414a-93c3-8f4dbf8a9ba6",
+    "atlas": "",
+    "rect": [
+      46,
+      46,
+      932,
+      762
+    ],
+    "offset": [
+      0,
+      85
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

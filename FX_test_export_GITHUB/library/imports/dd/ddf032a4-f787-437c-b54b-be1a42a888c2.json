@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gradient_vertical",
+    "texture": "05308f59-2081-427b-8b6a-d9403b88bf00",
+    "atlas": "",
+    "rect": [
+      0,
+      4,
+      256,
+      252
+    ],
+    "offset": [
+      0,
+      -2
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

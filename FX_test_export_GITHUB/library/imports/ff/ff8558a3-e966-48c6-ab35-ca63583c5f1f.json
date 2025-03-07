@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "trace_06",
+    "texture": "5d60d337-700d-4ba7-b33e-6b8514f9cfcb",
+    "atlas": "",
+    "rect": [
+      155,
+      25,
+      202,
+      462
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

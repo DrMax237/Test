@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "T_CoilHalfSpark",
+    "texture": "049d8a01-264e-4ddd-8875-79b99759f6fb",
+    "atlas": "",
+    "rect": [
+      24,
+      37,
+      454,
+      452
+    ],
+    "offset": [
+      -5,
+      -7
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

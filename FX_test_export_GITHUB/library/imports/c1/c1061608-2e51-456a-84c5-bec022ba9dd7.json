@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "explosion_round_softshadow_3x3",
+    "texture": "dc22502b-04b6-4b16-a9a7-000bfae2fa16",
+    "atlas": "",
+    "rect": [
+      57,
+      57,
+      910,
+      741
+    ],
+    "offset": [
+      0,
+      84.5
+    ],
+    "originalSize": [
+      1024,
+      1024
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

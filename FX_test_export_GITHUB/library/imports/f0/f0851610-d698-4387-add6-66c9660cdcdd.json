@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sym_magnet",
+    "texture": "ce7af30b-6322-46f4-808a-a577e1e1295f",
+    "atlas": "",
+    "rect": [
+      34,
+      39,
+      428,
+      432
+    ],
+    "offset": [
+      -8,
+      1
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

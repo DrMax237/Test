@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "sousage_x64",
+    "texture": "d071ab3c-d081-4b8b-930d-ece6a9bf2d3e",
+    "atlas": "",
+    "rect": [
+      0,
+      18,
+      47,
+      12
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      48,
+      48
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

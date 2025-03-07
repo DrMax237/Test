@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "scorch_03",
+    "texture": "e1ad048b-5cb1-4c03-8843-d44355138c0e",
+    "atlas": "",
+    "rect": [
+      24,
+      0,
+      472,
+      493
+    ],
+    "offset": [
+      4,
+      9.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_K_x512",
+    "texture": "f8aa8bfb-08c0-4c79-8395-d0f1b304a13c",
+    "atlas": "",
+    "rect": [
+      22,
+      10,
+      472,
+      491
+    ],
+    "offset": [
+      2,
+      0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

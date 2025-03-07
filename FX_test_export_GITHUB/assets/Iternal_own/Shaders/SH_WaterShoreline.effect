@@ -1,0 +1,185 @@
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - vert: unlit-vs
+      frag: unlit-fs
+      depthStencilState:
+        depthTest: true
+        depthWrite: true
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        foamColor: { value: [1, 1, 1, 1], editor: { type: color } }
+        diffuseColor: { value: [1, 1, 1, 1], editor: { type: color } }
+        mainTiling: { value: [1, 1] }
+        mainOffset: { value: [0, 0] }
+        surfaceNoiseScroll: { value: [1.0, 1.0] }
+        surfaceNoiseCutoff: { value: 0.5 }
+        smoothing: { value: 0.01 }
+        shorelineCutoff: { value: 0.5 }
+        distortionAmount: { value: 1 }
+        alphaThreshold: { value: 0.5 }
+        noiseTexture: { value: white }
+        shorelineTexture: { value: white }
+        distortionTexture: { value: white }
+        diffuseTexture: { value: white }
+  - name: transparent
+    passes: 
+      - stage: transparent
+        vert: unlit-vs
+        frag: unlit-fs
+        depthStencilState:
+          depthTest: true
+          depthWrite: true
+        blendState:
+          targets:
+          - blend: true
+        rasterizerState:
+          cullMode: none
+        properties:
+          foamColor: { value: [1, 1, 1, 1], editor: { type: color } }
+          diffuseColor: { value: [1, 1, 1, 1], editor: { type: color } }
+          mainTiling: { value: [1, 1] }
+          mainOffset: { value: [0, 0] }
+          surfaceNoiseScroll: { value: [1.0, 1.0] }
+          surfaceNoiseCutoff: { value: 0.5 }
+          edgeNoiseCutoff: { value: 0.5 }
+          smoothing: { value: 0.01 }
+          shorelineCutoff: { value: 0.5 }
+          distortionAmount: { value: 1 }
+          alphaThreshold: { value: 0.5 }
+          noiseTexture: { value: white }
+          shorelineTexture: { value: white }
+          distortionTexture: { value: white }
+          diffuseTexture: { value: white }
+}%
+
+
+CCProgram unlit-vs %{
+  precision highp float;
+
+  #include <cc-local>
+  #include <cc-global>
+  #include <skinning>
+  #include <input-standard>
+
+  #define CC_USE_TEXTURE CC_USE_ATTRIBUTE_UV0 && USE_DIFFUSE_TEXTURE
+
+  #if CC_USE_TEXTURE
+    out mediump vec2 v_uv0;
+  #endif
+
+  #if CC_USE_ATTRIBUTE_COLOR
+    out lowp vec4 v_color;
+  #endif
+
+  void main () {
+    StandardVertInput In;
+    CCVertInput(In);
+
+    #if CC_USE_ATTRIBUTE_COLOR
+      v_color = In.color;
+    #endif
+
+    #if CC_USE_TEXTURE
+      v_uv0 = In.uv;
+    #endif
+
+    gl_Position = cc_matViewProj * cc_matWorld * In.position;
+  }
+}%
+
+
+CCProgram unlit-fs %{
+  precision highp float;
+
+  #include <alpha-test>
+  #include <texture>
+  #include <output>
+  #include <cc-global>
+
+  #define SMOOTHSTEP_AA 0.01
+
+  uniform MAIN_TILING {
+    vec2 mainTiling;
+    vec2 mainOffset;
+  };
+
+  uniform UNLIT {
+    lowp vec4 diffuseColor;
+  };
+
+  uniform WATER {
+    lowp vec4 foamColor;
+    mediump vec2 surfaceNoiseScroll;
+    float surfaceNoiseCutoff;
+    float edgeNoiseCutoff;
+    float shorelineCutoff;
+    float distortionAmount;
+    float smoothing;
+  };
+
+  uniform sampler2D noiseTexture;
+  uniform sampler2D shorelineTexture;
+  uniform sampler2D distortionTexture;
+
+  #if USE_DIFFUSE_TEXTURE
+    uniform sampler2D diffuseTexture;
+  #endif
+
+  #define CC_USE_TEXTURE CC_USE_ATTRIBUTE_UV0 && USE_DIFFUSE_TEXTURE
+
+  #if CC_USE_ATTRIBUTE_COLOR
+    in lowp vec4 v_color;
+  #endif
+
+  #if CC_USE_TEXTURE
+    in mediump vec2 v_uv0;
+  #endif
+
+  vec4 alphaBlend(vec4 top, vec4 bottom) {
+    vec3 color = (top.rgb * top.a) + (bottom.rgb * (1.0 - top.a));
+	  float alpha = top.a + bottom.a * (1.0 - top.a);
+
+	  return vec4(color, alpha);
+  }
+
+  void main () {
+    vec4 color = diffuseColor;
+    vec4 noiseColor = vec4(1,1,1,1);
+    vec4 shorelineColor = vec4(1,1,1,1);
+    vec4 distortionColor = vec4(1,1,1,1);
+
+    #if CC_USE_TEXTURE
+      mediump vec2 v_uv_tiled = fract(v_uv0 * mainTiling + mainOffset);
+      CCTexture(distortionTexture, v_uv_tiled, distortionColor);
+
+      distortionColor = distortionColor * distortionAmount;
+
+      mediump vec2 v_uv_noise = vec2(v_uv_tiled.x + cc_time.x * surfaceNoiseScroll.x + distortionColor.x, v_uv_tiled.y + cc_time.x * surfaceNoiseScroll.y + distortionColor.y);
+      v_uv_noise = vec2(v_uv_noise.x - floor(v_uv_noise.x), v_uv_noise.y - floor(v_uv_noise.y));
+      CCTexture(diffuseTexture, v_uv_noise, color);
+      CCTexture(noiseTexture, v_uv_noise, noiseColor);
+      CCTexture(shorelineTexture, v_uv0, shorelineColor);
+    #endif
+
+    #if CC_USE_ATTRIBUTE_COLOR
+      color *= v_color;
+    #endif
+
+    float surfaceNoiseSample = noiseColor.r + shorelineColor.a * shorelineCutoff;
+    float surfaceNoise = smoothstep(surfaceNoiseCutoff - smoothing, surfaceNoiseCutoff + smoothing, surfaceNoiseSample) * v_uv0.x;
+    vec4 fc = foamColor;
+    fc.a = clamp(color.a + foamColor.a, 0.0, 1.0);
+
+    color = mix(color, fc, surfaceNoise);
+
+    ALPHA_TEST(color);
+
+    gl_FragColor = CCFragOutput(color);
+  }
+}%

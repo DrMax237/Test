@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "dirt_01",
+    "texture": "afec291d-acab-419c-bdc0-d1fdc08294e2",
+    "atlas": "",
+    "rect": [
+      71,
+      0,
+      375,
+      476
+    ],
+    "offset": [
+      2.5,
+      18
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

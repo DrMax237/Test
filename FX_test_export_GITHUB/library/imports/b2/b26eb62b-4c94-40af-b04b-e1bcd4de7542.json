@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_magic",
+    "texture": "e69f4c5a-21bd-473b-8477-b4b8968c0fc6",
+    "atlas": "",
+    "rect": [
+      22,
+      10,
+      472,
+      491
+    ],
+    "offset": [
+      2,
+      0.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

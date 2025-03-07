@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "8542265_question_mark_icon",
+    "texture": "a328e08c-930c-4f23-8eb3-079efe1b96ef",
+    "atlas": "",
+    "rect": [
+      44,
+      0,
+      177,
+      256
+    ],
+    "offset": [
+      4.5,
+      0
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

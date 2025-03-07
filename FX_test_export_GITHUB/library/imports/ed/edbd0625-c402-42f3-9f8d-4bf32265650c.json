@@ -1,0 +1,686 @@
+{
+  "__type__": "cc.EffectAsset",
+  "_name": "SH_Glow",
+  "_objFlags": 0,
+  "_native": "",
+  "properties": null,
+  "techniques": [
+    {
+      "passes": [
+        {
+          "name": "main",
+          "stage": "transparent",
+          "rasterizerState": {
+            "cullMode": 0
+          },
+          "blendState": {
+            "targets": [
+              {
+                "blend": true
+              }
+            ]
+          },
+          "depthStencilState": {
+            "depthTest": true,
+            "depthWrite": true
+          },
+          "properties": {
+            "baseColor": {
+              "value": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "editor": {
+                "type": "color",
+                "displayName": "Base Color"
+              },
+              "type": 16
+            },
+            "baseTexture": {
+              "value": "white",
+              "type": 29
+            },
+            "baseTexTillig": {
+              "value": [
+                1,
+                1
+              ],
+              "editor": {
+                "displayName": "Tilling Texture"
+              },
+              "type": 14
+            },
+            "baseTexOffset": {
+              "value": [
+                0,
+                0
+              ],
+              "editor": {
+                "displayName": "Offset Texture"
+              },
+              "type": 14
+            }
+          },
+          "program": "SH_Glow|vs|fs"
+        },
+        {
+          "name": "glow",
+          "stage": "transparent",
+          "blendState": {
+            "targets": [
+              {
+                "blend": true
+              }
+            ]
+          },
+          "rasterizerState": {
+            "cullMode": 0
+          },
+          "depthStencilState": {
+            "depthTest": true,
+            "depthWrite": true
+          },
+          "properties": {
+            "glowWidth": {
+              "value": [
+                20
+              ],
+              "type": 13
+            },
+            "depthBias": {
+              "value": [
+                0
+              ],
+              "type": 13
+            },
+            "glowColor": {
+              "value": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "editor": {
+                "type": "color"
+              },
+              "type": 16
+            },
+            "glowTexture": {
+              "value": "white",
+              "type": 29
+            },
+            "glowTexTillig": {
+              "value": [
+                1,
+                1
+              ],
+              "editor": {
+                "displayName": "Tilling Texture"
+              },
+              "type": 14
+            },
+            "glowTexOffset": {
+              "value": [
+                0,
+                0
+              ],
+              "editor": {
+                "displayName": "Offset Texture"
+              },
+              "type": 14
+            },
+            "intensity": {
+              "value": [
+                3
+              ],
+              "type": 13
+            },
+            "smoothness": {
+              "value": [
+                3
+              ],
+              "type": 13
+            },
+            "deltaWidth": {
+              "value": [
+                10
+              ],
+              "type": 13
+            },
+            "velocity": {
+              "value": [
+                3
+              ],
+              "type": 13
+            }
+          },
+          "program": "SH_Glow|glow-vs:vert|glow-fs:frag"
+        },
+        {
+          "name": "shadowcast",
+          "stage": "shadowcast",
+          "rasterizerState": {
+            "cullMode": 1029
+          },
+          "depthStencilState": {
+            "depthTest": true,
+            "depthWrite": true
+          },
+          "program": "SH_Glow|shadow-map-vs|shadow-map-fs"
+        }
+      ]
+    }
+  ],
+  "shaders": [
+    {
+      "hash": 675977464,
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  mat4 cc_matView;\n  mat4 cc_matViewInv;\n  mat4 cc_matProj;\n  mat4 cc_matProjInv;\n  mat4 cc_matViewProj;\n  mat4 cc_matViewProjInv;\n  vec4 cc_cameraPos;\n  vec4 cc_time;\n  mediump vec4 cc_screenSize;\n  mediump vec4 cc_screenScale;\n};\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\n#if CC_USE_SKINNING\n  in vec4 a_weights;\n  in vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform SKINNING {\n      vec2 jointsTextureSize;\n    };\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform JOINT_MATRIX {\n      mat4 jointMatrices[50];\n    };\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nstruct StandardVertInput {\n  vec2 uv;\n  vec4 position;\n  vec3 normal;\n  vec4 tangent;\n  vec4 color;\n};\nin vec3 a_position;\n#if CC_USE_ATTRIBUTE_UV0\nin vec2 a_uv0;\n#endif\n#if CC_USE_ATTRIBUTE_COLOR\nin vec4 a_color;\n#endif\n#if CC_USE_ATTRIBUTE_NORMAL\nin vec3 a_normal;\n#endif\n#if CC_USE_ATTRIBUTE_TANGENT\nin vec4 a_tangent;\n#endif\nvoid CCAttribute (out StandardVertInput In) {\n  In.position = vec4(a_position, 1.0);\n  #if CC_USE_ATTRIBUTE_UV0\n    In.uv = a_uv0;\n  #else\n    In.uv = vec2(0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_COLOR\n    In.color = a_color;\n  #else\n    In.color = vec4(1.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_NORMAL\n    In.normal = a_normal;\n  #else\n    In.normal = vec3(0.0, 1.0, 0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_TANGENT\n    In.tangent = a_tangent;\n  #else\n    In.tangent = vec4(1.0, 0.0, 0.0, 0.0);\n  #endif\n}\nvoid CCVertInput(out StandardVertInput In) {\n  CCAttribute(In);\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    In.position = m * In.position;\n    #if CC_USE_ATTRIBUTE_NORMAL\n      In.normal = (m * vec4(In.normal, 0)).xyz;\n    #endif\n    #if CC_USE_ATTRIBUTE_TANGENT\n      In.tangent = m * In.tangent;\n    #endif\n  #endif\n}\nout vec2 v_uv;\nvoid main () {\n  StandardVertInput v;\n  CCVertInput(v);\n  v_uv = v.uv;\n  gl_Position = cc_matViewProj * cc_matWorld * v.position;\n}",
+        "frag": "\nprecision highp float;\nin vec2 v_uv;\nuniform Main {\n  vec4 baseColor;\n};\n#if USE_BASE_TEXTURE\n  uniform sampler2D baseTexture;\n  uniform BaseTexture {\n    vec2 baseTexTillig;\n    vec2 baseTexOffset;\n  };\n#endif\nvoid main () {\n  vec4 color = baseColor;\n  #if USE_BASE_TEXTURE\n    vec2 uv = fract(v_uv * baseTexTillig + ((vec2(1.0, 1.0) - vec2(1.0, 1.0) * baseTexTillig) * baseTexOffset));\n  vec4 baseTexture_tmp = texture(baseTexture, uv);\n  #if CC_USE_ALPHA_ATLAS_baseTexture\n      baseTexture_tmp.a *= texture(baseTexture, uv + vec2(0, 0.5)).r;\n  #endif\n  #if INPUT_IS_GAMMA\n    color.rgb *= (baseTexture_tmp.rgb * baseTexture_tmp.rgb);\n    color.a *= baseTexture_tmp.a;\n  #else\n    color *= baseTexture_tmp;\n  #endif\n  #endif\n  gl_FragColor = color;\n}"
+      },
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mat4 cc_matViewProj;\nuniform mat4 cc_matWorld;\n#if CC_USE_SKINNING\n  attribute vec4 a_weights;\n  attribute vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform vec2 jointsTextureSize;\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture2D(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture2D(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture2D(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture2D(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture2D(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform mat4 jointMatrices[50];\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nstruct StandardVertInput {\n  vec2 uv;\n  vec4 position;\n  vec3 normal;\n  vec4 tangent;\n  vec4 color;\n};\nattribute vec3 a_position;\n#if CC_USE_ATTRIBUTE_UV0\nattribute vec2 a_uv0;\n#endif\n#if CC_USE_ATTRIBUTE_COLOR\nattribute vec4 a_color;\n#endif\n#if CC_USE_ATTRIBUTE_NORMAL\nattribute vec3 a_normal;\n#endif\n#if CC_USE_ATTRIBUTE_TANGENT\nattribute vec4 a_tangent;\n#endif\nvoid CCAttribute (out StandardVertInput In) {\n  In.position = vec4(a_position, 1.0);\n  #if CC_USE_ATTRIBUTE_UV0\n    In.uv = a_uv0;\n  #else\n    In.uv = vec2(0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_COLOR\n    In.color = a_color;\n  #else\n    In.color = vec4(1.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_NORMAL\n    In.normal = a_normal;\n  #else\n    In.normal = vec3(0.0, 1.0, 0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_TANGENT\n    In.tangent = a_tangent;\n  #else\n    In.tangent = vec4(1.0, 0.0, 0.0, 0.0);\n  #endif\n}\nvoid CCVertInput(out StandardVertInput In) {\n  CCAttribute(In);\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    In.position = m * In.position;\n    #if CC_USE_ATTRIBUTE_NORMAL\n      In.normal = (m * vec4(In.normal, 0)).xyz;\n    #endif\n    #if CC_USE_ATTRIBUTE_TANGENT\n      In.tangent = m * In.tangent;\n    #endif\n  #endif\n}\nvarying vec2 v_uv;\nvoid main () {\n  StandardVertInput v;\n  CCVertInput(v);\n  v_uv = v.uv;\n  gl_Position = cc_matViewProj * cc_matWorld * v.position;\n}",
+        "frag": "\nprecision highp float;\nvarying vec2 v_uv;\nuniform vec4 baseColor;\n#if USE_BASE_TEXTURE\n  uniform sampler2D baseTexture;\n  uniform vec2 baseTexTillig;\nuniform vec2 baseTexOffset;\n#endif\nvoid main () {\n  vec4 color = baseColor;\n  #if USE_BASE_TEXTURE\n    vec2 uv = fract(v_uv * baseTexTillig + ((vec2(1.0, 1.0) - vec2(1.0, 1.0) * baseTexTillig) * baseTexOffset));\n  vec4 baseTexture_tmp = texture2D(baseTexture, uv);\n  #if CC_USE_ALPHA_ATLAS_baseTexture\n      baseTexture_tmp.a *= texture2D(baseTexture, uv + vec2(0, 0.5)).r;\n  #endif\n  #if INPUT_IS_GAMMA\n    color.rgb *= (baseTexture_tmp.rgb * baseTexture_tmp.rgb);\n    color.a *= baseTexture_tmp.a;\n  #else\n    color *= baseTexture_tmp;\n  #endif\n  #endif\n  gl_FragColor = color;\n}"
+      },
+      "builtins": {
+        "globals": {
+          "blocks": [
+            {
+              "name": "CCGlobal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        },
+        "locals": {
+          "blocks": [
+            {
+              "name": "CCLocal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        }
+      },
+      "defines": [
+        {
+          "name": "CC_USE_SKINNING",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_JOINTS_TEXTRUE",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING"
+          ]
+        },
+        {
+          "name": "CC_JOINTS_TEXTURE_FLOAT32",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ]
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_UV0",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_COLOR",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_NORMAL",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_TANGENT",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "USE_BASE_TEXTURE",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ALPHA_ATLAS_baseTexture",
+          "type": "boolean",
+          "defines": [
+            "USE_BASE_TEXTURE"
+          ]
+        },
+        {
+          "name": "INPUT_IS_GAMMA",
+          "type": "boolean",
+          "defines": [
+            "USE_BASE_TEXTURE"
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "name": "SKINNING",
+          "members": [
+            {
+              "name": "jointsTextureSize",
+              "type": 14,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 0
+        },
+        {
+          "name": "JOINT_MATRIX",
+          "members": [
+            {
+              "name": "jointMatrices",
+              "type": 26,
+              "count": 50
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING"
+          ],
+          "binding": 1
+        },
+        {
+          "name": "Main",
+          "members": [
+            {
+              "name": "baseColor",
+              "type": 16,
+              "count": 1
+            }
+          ],
+          "defines": [],
+          "binding": 2
+        },
+        {
+          "name": "BaseTexture",
+          "members": [
+            {
+              "name": "baseTexTillig",
+              "type": 14,
+              "count": 1
+            },
+            {
+              "name": "baseTexOffset",
+              "type": 14,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "USE_BASE_TEXTURE"
+          ],
+          "binding": 3
+        }
+      ],
+      "samplers": [
+        {
+          "name": "jointsTexture",
+          "type": 29,
+          "count": 1,
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 30
+        },
+        {
+          "name": "baseTexture",
+          "type": 29,
+          "count": 1,
+          "defines": [
+            "USE_BASE_TEXTURE"
+          ],
+          "binding": 31
+        }
+      ],
+      "record": null,
+      "name": "SH_Glow|vs|fs"
+    },
+    {
+      "hash": 303081929,
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  mat4 cc_matView;\n  mat4 cc_matViewInv;\n  mat4 cc_matProj;\n  mat4 cc_matProjInv;\n  mat4 cc_matViewProj;\n  mat4 cc_matViewProjInv;\n  vec4 cc_cameraPos;\n  vec4 cc_time;\n  mediump vec4 cc_screenSize;\n  mediump vec4 cc_screenScale;\n};\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\n#if CC_USE_SKINNING\n  in vec4 a_weights;\n  in vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform SKINNING {\n      vec2 jointsTextureSize;\n    };\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform JOINT_MATRIX {\n      mat4 jointMatrices[50];\n    };\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nstruct StandardVertInput {\n  vec2 uv;\n  vec4 position;\n  vec3 normal;\n  vec4 tangent;\n  vec4 color;\n};\nin vec3 a_position;\n#if CC_USE_ATTRIBUTE_UV0\nin vec2 a_uv0;\n#endif\n#if CC_USE_ATTRIBUTE_COLOR\nin vec4 a_color;\n#endif\n#if CC_USE_ATTRIBUTE_NORMAL\nin vec3 a_normal;\n#endif\n#if CC_USE_ATTRIBUTE_TANGENT\nin vec4 a_tangent;\n#endif\nvoid CCAttribute (out StandardVertInput In) {\n  In.position = vec4(a_position, 1.0);\n  #if CC_USE_ATTRIBUTE_UV0\n    In.uv = a_uv0;\n  #else\n    In.uv = vec2(0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_COLOR\n    In.color = a_color;\n  #else\n    In.color = vec4(1.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_NORMAL\n    In.normal = a_normal;\n  #else\n    In.normal = vec3(0.0, 1.0, 0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_TANGENT\n    In.tangent = a_tangent;\n  #else\n    In.tangent = vec4(1.0, 0.0, 0.0, 0.0);\n  #endif\n}\nvoid CCVertInput(out StandardVertInput In) {\n  CCAttribute(In);\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    In.position = m * In.position;\n    #if CC_USE_ATTRIBUTE_NORMAL\n      In.normal = (m * vec4(In.normal, 0)).xyz;\n    #endif\n    #if CC_USE_ATTRIBUTE_TANGENT\n      In.tangent = m * In.tangent;\n    #endif\n  #endif\n}\nout vec2 v_uv;\nout vec3 v_worldNormal;\nout vec3 v_worldPos;\nout vec3 v_viewDirection;\nuniform OutlineVert {\n  float glowWidth;\n  float depthBias;\n};\n#if IS_ANIMATING\n  uniform AnimationVert {\n    float deltaWidth;\n    float velocity;\n  };\n#endif\nvec4 vert () {\n  StandardVertInput v;\n  CCVertInput(v);\n  float width = glowWidth;\n  #if IS_ANIMATING\n    width += ((sin(cc_time.x * velocity) + 1.0) / 2.0 * deltaWidth);\n  #endif\n  width *= 0.01;\n  #if USE_POSITION_SCALING\n    vec3 dir = normalize(v.position.xyz);\n    float flip = dot(dir, normalize(v.normal)) < 0.0 ? -1.0 : 1.0;\n    v.position.xyz += flip * dir * width * 2.0;\n  #else\n    v.position.xyz += normalize(v.normal) * width;\n  #endif\n  v_uv = v.uv;\n  v_worldNormal = normalize((cc_matWorldIT * vec4(v.normal, 0)).xyz);\n  v_worldPos = (cc_matWorld * v.position).xyz;\n  v_viewDirection = normalize(cc_cameraPos.xyz - v_worldPos);\n  vec4 pos = cc_matViewProj * cc_matWorld * v.position;\n  pos.z -= depthBias * 0.002;\n  return pos;\n}\nvoid main() { gl_Position = vert(); }",
+        "frag": "\nprecision highp float;\nin vec2 v_uv;\nin vec3 v_worldNormal;\nin vec3 v_worldPos;\nin vec3 v_viewDirection;\nuniform OutlineFrag {\n  vec4 glowColor;\n  float intensity;\n  float smoothness;\n};\n#if USE_GLOW_TEXTURE\n  uniform sampler2D glowTexture;\n  uniform GlowTexture {\n    vec2 glowTexTillig;\n    vec2 glowTexOffset;\n  };\n#endif\nfloat mulScalar (vec3 v1, vec3 v2) {\n  return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;\n}\nvec4 frag () {\n  vec4 color = glowColor;\n  #if USE_GLOW_TEXTURE\n    vec2 uv = fract(v_uv * glowTexTillig + ((vec2(1.0, 1.0) - vec2(1.0, 1.0) * glowTexTillig) * glowTexOffset));\n  vec4 glowTexture_tmp = texture(glowTexture, uv);\n  #if CC_USE_ALPHA_ATLAS_glowTexture\n      glowTexture_tmp.a *= texture(glowTexture, uv + vec2(0, 0.5)).r;\n  #endif\n  #if INPUT_IS_GAMMA\n    color.rgb *= (glowTexture_tmp.rgb * glowTexture_tmp.rgb);\n    color.a *= glowTexture_tmp.a;\n  #else\n    color *= glowTexture_tmp;\n  #endif\n  #endif\n  float mul = mulScalar(v_viewDirection, v_worldNormal);\n  if (mul <= 0.0) discard;\n  float opacity =  (pow(mul, smoothness + 1.0) * intensity);\n  if (opacity <= 0.0) discard;\n  if (opacity > 1.0) opacity = 1.0;\n  return vec4(color.rgb, opacity);\n}\nout vec4 cc_FragColor;\nvoid main() { cc_FragColor = frag(); }"
+      },
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mat4 cc_matViewProj;\nuniform vec4 cc_cameraPos;\nuniform vec4 cc_time;\nuniform mat4 cc_matWorld;\nuniform mat4 cc_matWorldIT;\n#if CC_USE_SKINNING\n  attribute vec4 a_weights;\n  attribute vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform vec2 jointsTextureSize;\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture2D(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture2D(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture2D(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture2D(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture2D(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform mat4 jointMatrices[50];\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nstruct StandardVertInput {\n  vec2 uv;\n  vec4 position;\n  vec3 normal;\n  vec4 tangent;\n  vec4 color;\n};\nattribute vec3 a_position;\n#if CC_USE_ATTRIBUTE_UV0\nattribute vec2 a_uv0;\n#endif\n#if CC_USE_ATTRIBUTE_COLOR\nattribute vec4 a_color;\n#endif\n#if CC_USE_ATTRIBUTE_NORMAL\nattribute vec3 a_normal;\n#endif\n#if CC_USE_ATTRIBUTE_TANGENT\nattribute vec4 a_tangent;\n#endif\nvoid CCAttribute (out StandardVertInput In) {\n  In.position = vec4(a_position, 1.0);\n  #if CC_USE_ATTRIBUTE_UV0\n    In.uv = a_uv0;\n  #else\n    In.uv = vec2(0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_COLOR\n    In.color = a_color;\n  #else\n    In.color = vec4(1.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_NORMAL\n    In.normal = a_normal;\n  #else\n    In.normal = vec3(0.0, 1.0, 0.0);\n  #endif\n  #if CC_USE_ATTRIBUTE_TANGENT\n    In.tangent = a_tangent;\n  #else\n    In.tangent = vec4(1.0, 0.0, 0.0, 0.0);\n  #endif\n}\nvoid CCVertInput(out StandardVertInput In) {\n  CCAttribute(In);\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    In.position = m * In.position;\n    #if CC_USE_ATTRIBUTE_NORMAL\n      In.normal = (m * vec4(In.normal, 0)).xyz;\n    #endif\n    #if CC_USE_ATTRIBUTE_TANGENT\n      In.tangent = m * In.tangent;\n    #endif\n  #endif\n}\nvarying vec2 v_uv;\nvarying vec3 v_worldNormal;\nvarying vec3 v_worldPos;\nvarying vec3 v_viewDirection;\nuniform float glowWidth;\nuniform float depthBias;\n#if IS_ANIMATING\n  uniform float deltaWidth;\nuniform float velocity;\n#endif\nvec4 vert () {\n  StandardVertInput v;\n  CCVertInput(v);\n  float width = glowWidth;\n  #if IS_ANIMATING\n    width += ((sin(cc_time.x * velocity) + 1.0) / 2.0 * deltaWidth);\n  #endif\n  width *= 0.01;\n  #if USE_POSITION_SCALING\n    vec3 dir = normalize(v.position.xyz);\n    float flip = dot(dir, normalize(v.normal)) < 0.0 ? -1.0 : 1.0;\n    v.position.xyz += flip * dir * width * 2.0;\n  #else\n    v.position.xyz += normalize(v.normal) * width;\n  #endif\n  v_uv = v.uv;\n  v_worldNormal = normalize((cc_matWorldIT * vec4(v.normal, 0)).xyz);\n  v_worldPos = (cc_matWorld * v.position).xyz;\n  v_viewDirection = normalize(cc_cameraPos.xyz - v_worldPos);\n  vec4 pos = cc_matViewProj * cc_matWorld * v.position;\n  pos.z -= depthBias * 0.002;\n  return pos;\n}\nvoid main() { gl_Position = vert(); }",
+        "frag": "\nprecision highp float;\nvarying vec2 v_uv;\nvarying vec3 v_worldNormal;\nvarying vec3 v_worldPos;\nvarying vec3 v_viewDirection;\nuniform vec4 glowColor;\nuniform float intensity;\nuniform float smoothness;\n#if USE_GLOW_TEXTURE\n  uniform sampler2D glowTexture;\n  uniform vec2 glowTexTillig;\nuniform vec2 glowTexOffset;\n#endif\nfloat mulScalar (vec3 v1, vec3 v2) {\n  return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;\n}\nvec4 frag () {\n  vec4 color = glowColor;\n  #if USE_GLOW_TEXTURE\n    vec2 uv = fract(v_uv * glowTexTillig + ((vec2(1.0, 1.0) - vec2(1.0, 1.0) * glowTexTillig) * glowTexOffset));\n  vec4 glowTexture_tmp = texture2D(glowTexture, uv);\n  #if CC_USE_ALPHA_ATLAS_glowTexture\n      glowTexture_tmp.a *= texture2D(glowTexture, uv + vec2(0, 0.5)).r;\n  #endif\n  #if INPUT_IS_GAMMA\n    color.rgb *= (glowTexture_tmp.rgb * glowTexture_tmp.rgb);\n    color.a *= glowTexture_tmp.a;\n  #else\n    color *= glowTexture_tmp;\n  #endif\n  #endif\n  float mul = mulScalar(v_viewDirection, v_worldNormal);\n  if (mul <= 0.0) discard;\n  float opacity =  (pow(mul, smoothness + 1.0) * intensity);\n  if (opacity <= 0.0) discard;\n  if (opacity > 1.0) opacity = 1.0;\n  return vec4(color.rgb, opacity);\n}\nvoid main() { gl_FragColor = frag(); }"
+      },
+      "builtins": {
+        "globals": {
+          "blocks": [
+            {
+              "name": "CCGlobal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        },
+        "locals": {
+          "blocks": [
+            {
+              "name": "CCLocal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        }
+      },
+      "defines": [
+        {
+          "name": "CC_USE_SKINNING",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_JOINTS_TEXTRUE",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING"
+          ]
+        },
+        {
+          "name": "CC_JOINTS_TEXTURE_FLOAT32",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ]
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_UV0",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_COLOR",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_NORMAL",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ATTRIBUTE_TANGENT",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "IS_ANIMATING",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "USE_POSITION_SCALING",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "USE_GLOW_TEXTURE",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_ALPHA_ATLAS_glowTexture",
+          "type": "boolean",
+          "defines": [
+            "USE_GLOW_TEXTURE"
+          ]
+        },
+        {
+          "name": "INPUT_IS_GAMMA",
+          "type": "boolean",
+          "defines": [
+            "USE_GLOW_TEXTURE"
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "name": "SKINNING",
+          "members": [
+            {
+              "name": "jointsTextureSize",
+              "type": 14,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 0
+        },
+        {
+          "name": "JOINT_MATRIX",
+          "members": [
+            {
+              "name": "jointMatrices",
+              "type": 26,
+              "count": 50
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING"
+          ],
+          "binding": 1
+        },
+        {
+          "name": "OutlineVert",
+          "members": [
+            {
+              "name": "glowWidth",
+              "type": 13,
+              "count": 1
+            },
+            {
+              "name": "depthBias",
+              "type": 13,
+              "count": 1
+            }
+          ],
+          "defines": [],
+          "binding": 2
+        },
+        {
+          "name": "AnimationVert",
+          "members": [
+            {
+              "name": "deltaWidth",
+              "type": 13,
+              "count": 1
+            },
+            {
+              "name": "velocity",
+              "type": 13,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "IS_ANIMATING"
+          ],
+          "binding": 3
+        },
+        {
+          "name": "OutlineFrag",
+          "members": [
+            {
+              "name": "glowColor",
+              "type": 16,
+              "count": 1
+            },
+            {
+              "name": "intensity",
+              "type": 13,
+              "count": 1
+            },
+            {
+              "name": "smoothness",
+              "type": 13,
+              "count": 1
+            }
+          ],
+          "defines": [],
+          "binding": 4
+        },
+        {
+          "name": "GlowTexture",
+          "members": [
+            {
+              "name": "glowTexTillig",
+              "type": 14,
+              "count": 1
+            },
+            {
+              "name": "glowTexOffset",
+              "type": 14,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "USE_GLOW_TEXTURE"
+          ],
+          "binding": 5
+        }
+      ],
+      "samplers": [
+        {
+          "name": "jointsTexture",
+          "type": 29,
+          "count": 1,
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 30
+        },
+        {
+          "name": "glowTexture",
+          "type": 29,
+          "count": 1,
+          "defines": [
+            "USE_GLOW_TEXTURE"
+          ],
+          "binding": 31
+        }
+      ],
+      "record": null,
+      "name": "SH_Glow|glow-vs:vert|glow-fs:frag"
+    },
+    {
+      "hash": 1165371292,
+      "glsl3": {
+        "vert": "\nprecision highp float;\nin vec3 a_position;\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\nuniform CC_SHADOW_MAP {\n  mat4  cc_shadow_map_lightViewProjMatrix;\n  vec4  cc_shadow_map_info;\n  float cc_shadow_map_bias;\n};\nout float v_depth;\n#if CC_USE_SKINNING\n  in vec4 a_weights;\n  in vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform SKINNING {\n      vec2 jointsTextureSize;\n    };\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform JOINT_MATRIX {\n      mat4 jointMatrices[50];\n    };\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nvoid SKIN_VERTEX(inout vec4 a1) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n  #endif\n}\nvoid SKIN_VERTEX(inout vec4 a1, inout vec4 a2) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n    a2 = m * a2;\n  #endif\n}\nvoid SKIN_VERTEX(inout vec4 a1, inout vec4 a2, inout vec4 a3) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n    a2 = m * a2;\n    a3 = m * a3;\n  #endif\n}\nvoid main () {\n  vec4 position = vec4(a_position, 1);\n  SKIN_VERTEX(position);\n  gl_Position = cc_shadow_map_lightViewProjMatrix * cc_matWorld * position;\n  v_depth = ((gl_Position.z + cc_shadow_map_info.x) / (cc_shadow_map_info.x + cc_shadow_map_info.y)) + cc_shadow_map_bias;\n}",
+        "frag": "\nprecision highp float;\nin float v_depth;\nvec4 packDepthToRGBA(float depth) {\n  vec4 ret = vec4(1.0, 255.0, 65025.0, 160581375.0) * depth;\n  ret = fract(ret);\n  ret -= ret.yzww * vec4(1.0 / 255.0, 1.0 / 255.0, 1.0 / 255.0, 0.0);\n  return ret;\n}\nvoid main () {\n    gl_FragColor = packDepthToRGBA(v_depth);\n}"
+      },
+      "glsl1": {
+        "vert": "\nprecision highp float;\nattribute vec3 a_position;\nuniform mat4 cc_matWorld;\nuniform mat4 cc_shadow_map_lightViewProjMatrix;\nuniform vec4 cc_shadow_map_info;\nuniform float cc_shadow_map_bias;\nvarying float v_depth;\n#if CC_USE_SKINNING\n  attribute vec4 a_weights;\n  attribute vec4 a_joints;\n  #if CC_USE_JOINTS_TEXTRUE\n    uniform vec2 jointsTextureSize;\n    uniform sampler2D jointsTexture;\n    #if CC_JOINTS_TEXTURE_FLOAT32\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 4.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = texture2D(jointsTexture, vec2(dx * (x + 0.5), y));\n        vec4 v2 = texture2D(jointsTexture, vec2(dx * (x + 1.5), y));\n        vec4 v3 = texture2D(jointsTexture, vec2(dx * (x + 2.5), y));\n        vec4 v4 = texture2D(jointsTexture, vec2(dx * (x + 3.5), y));\n        return mat4(v1, v2, v3, v4);\n      }\n    #else\n      float decode32(vec4 rgba) {\n        float Sign = 1.0 - step(128.0, rgba[0]) * 2.0;\n        float Exponent = 2.0 * mod(rgba[0], 128.0) + step(128.0, rgba[1]) - 127.0;\n        float Mantissa = mod(rgba[1], 128.0) * 65536.0 + rgba[2] * 256.0 + rgba[3] + 8388608.0;\n        return Sign * exp2(Exponent - 23.0) * Mantissa;\n      }\n      vec4 decodevec4 (vec4 x, vec4 y, vec4 z, vec4 w) {\n        return vec4(\n          decode32(x.wzyx * 255.0),\n          decode32(y.wzyx * 255.0),\n          decode32(z.wzyx * 255.0),\n          decode32(w.wzyx * 255.0)\n        );\n      }\n      vec4 decodevec4 (float dx, float x, float y) {\n        return decodevec4(\n          texture2D(jointsTexture, vec2(dx * (x + 0.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 1.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 2.5), y)),\n          texture2D(jointsTexture, vec2(dx * (x + 3.5), y))\n        );\n      }\n      mat4 getBoneMatrix(const in float i) {\n        float width = jointsTextureSize.x;\n        float height = jointsTextureSize.y;\n        float j = i * 16.0;\n        float x = mod(j, width);\n        float y = floor(j / width);\n        float dx = 1.0 / width;\n        float dy = 1.0 / height;\n        y = dy * (y + 0.5);\n        vec4 v1 = decodevec4(dx, x,       y);\n        vec4 v2 = decodevec4(dx, x+4.0,   y);\n        vec4 v3 = decodevec4(dx, x+8.0,   y);\n        vec4 v4 = decodevec4(dx, x+12.0,  y);\n        return mat4(v1, v2, v3, v4);\n      }\n    #endif\n  #else\n    uniform mat4 jointMatrices[50];\n    mat4 getBoneMatrix(const in float i) {\n      return jointMatrices[int(i)];\n    }\n  #endif\n    mat4 skinMatrix() {\n      return\n        getBoneMatrix(a_joints.x) * a_weights.x +\n        getBoneMatrix(a_joints.y) * a_weights.y +\n        getBoneMatrix(a_joints.z) * a_weights.z +\n        getBoneMatrix(a_joints.w) * a_weights.w\n        ;\n    }\n#endif\nvoid SKIN_VERTEX(inout vec4 a1) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n  #endif\n}\nvoid SKIN_VERTEX(inout vec4 a1, inout vec4 a2) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n    a2 = m * a2;\n  #endif\n}\nvoid SKIN_VERTEX(inout vec4 a1, inout vec4 a2, inout vec4 a3) {\n  #if CC_USE_SKINNING\n    mat4 m = skinMatrix();\n    a1 = m * a1;\n    a2 = m * a2;\n    a3 = m * a3;\n  #endif\n}\nvoid main () {\n  vec4 position = vec4(a_position, 1);\n  SKIN_VERTEX(position);\n  gl_Position = cc_shadow_map_lightViewProjMatrix * cc_matWorld * position;\n  v_depth = ((gl_Position.z + cc_shadow_map_info.x) / (cc_shadow_map_info.x + cc_shadow_map_info.y)) + cc_shadow_map_bias;\n}",
+        "frag": "\nprecision highp float;\nvarying float v_depth;\nvec4 packDepthToRGBA(float depth) {\n  vec4 ret = vec4(1.0, 255.0, 65025.0, 160581375.0) * depth;\n  ret = fract(ret);\n  ret -= ret.yzww * vec4(1.0 / 255.0, 1.0 / 255.0, 1.0 / 255.0, 0.0);\n  return ret;\n}\nvoid main () {\n    gl_FragColor = packDepthToRGBA(v_depth);\n}"
+      },
+      "builtins": {
+        "globals": {
+          "blocks": [
+            {
+              "name": "CC_SHADOW_MAP",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        },
+        "locals": {
+          "blocks": [
+            {
+              "name": "CCLocal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        }
+      },
+      "defines": [
+        {
+          "name": "CC_USE_SKINNING",
+          "type": "boolean",
+          "defines": []
+        },
+        {
+          "name": "CC_USE_JOINTS_TEXTRUE",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING"
+          ]
+        },
+        {
+          "name": "CC_JOINTS_TEXTURE_FLOAT32",
+          "type": "boolean",
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "name": "SKINNING",
+          "members": [
+            {
+              "name": "jointsTextureSize",
+              "type": 14,
+              "count": 1
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 0
+        },
+        {
+          "name": "JOINT_MATRIX",
+          "members": [
+            {
+              "name": "jointMatrices",
+              "type": 26,
+              "count": 50
+            }
+          ],
+          "defines": [
+            "CC_USE_SKINNING"
+          ],
+          "binding": 1
+        }
+      ],
+      "samplers": [
+        {
+          "name": "jointsTexture",
+          "type": 29,
+          "count": 1,
+          "defines": [
+            "CC_USE_SKINNING",
+            "CC_USE_JOINTS_TEXTRUE"
+          ],
+          "binding": 30
+        }
+      ],
+      "record": null,
+      "name": "SH_Glow|shadow-map-vs|shadow-map-fs"
+    }
+  ]
+}

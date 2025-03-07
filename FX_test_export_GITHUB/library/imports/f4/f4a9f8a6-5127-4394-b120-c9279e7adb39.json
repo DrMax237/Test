@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "cloud_2x2_hard",
+    "texture": "92e4033c-08b5-45e6-b910-7f2957829965",
+    "atlas": "",
+    "rect": [
+      40,
+      34,
+      419,
+      423
+    ],
+    "offset": [
+      -6.5,
+      10.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

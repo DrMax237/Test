@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_kick",
+    "texture": "096f623e-19bf-40f7-975d-0a06a5eb5401",
+    "atlas": "",
+    "rect": [
+      218,
+      79,
+      596,
+      339
+    ],
+    "offset": [
+      4,
+      7.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

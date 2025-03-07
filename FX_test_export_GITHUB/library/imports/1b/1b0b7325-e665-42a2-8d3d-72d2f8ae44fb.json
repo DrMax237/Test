@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "txt_omg",
+    "texture": "48d2be5c-f41d-4077-9ee3-70c13474f4db",
+    "atlas": "",
+    "rect": [
+      11,
+      44,
+      1007,
+      435
+    ],
+    "offset": [
+      2.5,
+      -5.5
+    ],
+    "originalSize": [
+      1024,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

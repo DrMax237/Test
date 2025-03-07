@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "magic_3d_x128",
+    "texture": "29978162-d0f7-4988-afff-c9d229a81fbb",
+    "atlas": "",
+    "rect": [
+      0,
+      17,
+      96,
+      96
+    ],
+    "offset": [
+      -16,
+      -1
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

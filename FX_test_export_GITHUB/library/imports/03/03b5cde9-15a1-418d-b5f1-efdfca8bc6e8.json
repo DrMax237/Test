@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "snowflake2",
+    "texture": "f7aae7a2-8aa4-472f-b18e-8a317ec3cf68",
+    "atlas": "",
+    "rect": [
+      19,
+      3,
+      218,
+      249
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

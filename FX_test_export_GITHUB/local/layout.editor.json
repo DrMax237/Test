@@ -1,0 +1,109 @@
+{
+  "version": "1.1.1",
+  "windows": {
+    "main": {
+      "main": true,
+      "url": "app://editor/index.html",
+      "windowType": "dockable",
+      "x": -8,
+      "y": -8,
+      "width": 2576,
+      "height": 1408,
+      "layout": {
+        "type": "dock-h",
+        "children": [
+          {
+            "width": 407,
+            "height": 1292,
+            "type": "dock-v",
+            "children": [
+              {
+                "width": 407,
+                "height": 755,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "hierarchy"
+                ]
+              },
+              {
+                "width": 407,
+                "height": 534,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "assets"
+                ]
+              }
+            ]
+          },
+          {
+            "width": 517,
+            "height": 1292,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "inspector",
+              "console"
+            ]
+          },
+          {
+            "width": 1630,
+            "height": 1292,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "scene"
+            ]
+          }
+        ]
+      },
+      "panels": [
+        "hierarchy",
+        "assets",
+        "inspector",
+        "console",
+        "scene"
+      ]
+    }
+  },
+  "panels": {
+    "project-settings": {
+      "x": 281,
+      "y": 268,
+      "width": 1447,
+      "height": 739
+    },
+    "console": {
+      "x": 1072,
+      "y": 520,
+      "width": 420,
+      "height": 339
+    },
+    "package-asset.export": {
+      "x": 1072,
+      "y": 406,
+      "width": 420,
+      "height": 585
+    },
+    "game-window": {
+      "x": 1022,
+      "y": 420,
+      "width": 516,
+      "height": 539
+    },
+    "sprite-editor": {
+      "x": 1022,
+      "y": 420,
+      "width": 951,
+      "height": 818
+    },
+    "package-asset.import": {
+      "x": 1072,
+      "y": 406,
+      "width": 420,
+      "height": 585
+    }
+  },
+  "panelLabelWidth": {}
+}

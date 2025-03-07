@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "rays_LD_x512",
+    "texture": "ed0f11d1-87e2-43f1-9c98-8e5a2fe8753c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      512,
+      506
+    ],
+    "offset": [
+      0,
+      3
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

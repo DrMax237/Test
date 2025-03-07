@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_play",
+    "texture": "e5657bf3-595d-40ec-a7c1-7f845a9af030",
+    "atlas": "",
+    "rect": [
+      32,
+      32,
+      448,
+      448
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

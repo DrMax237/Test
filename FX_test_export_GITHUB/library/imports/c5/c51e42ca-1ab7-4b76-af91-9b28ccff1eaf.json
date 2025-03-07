@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "confetis_bw_x128",
+    "texture": "022e8fb4-692d-4359-a326-932b825d1099",
+    "atlas": "",
+    "rect": [
+      3,
+      2,
+      250,
+      253
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      256,
+      256
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

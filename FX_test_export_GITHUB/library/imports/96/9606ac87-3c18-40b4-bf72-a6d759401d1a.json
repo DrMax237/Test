@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "candle_soft3",
+    "texture": "ad5457cf-05f1-4e17-90b2-0e8f7655e064",
+    "atlas": "",
+    "rect": [
+      28,
+      2,
+      465,
+      499
+    ],
+    "offset": [
+      4.5,
+      4.5
+    ],
+    "originalSize": [
+      512,
+      512
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
